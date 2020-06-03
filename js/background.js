@@ -26,13 +26,5 @@ class Background {
       this.w,
       this.h
     )
-
-    this._ctx.drawImage(
-      this._img,
-      this.x + this._ctx.canvas.width,
-      this.y,
-      this.w,
-      this.h
-    )
   }
 }
