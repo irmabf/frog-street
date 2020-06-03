@@ -15,7 +15,7 @@ class Background {
     this.h = this._ctx.canvas.height
 
     this._img = new Image()
-    this._img.src = '../img/road.png'
+    this._img.src = './img/road.png'
   }
 
   draw() {

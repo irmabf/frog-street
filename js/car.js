@@ -9,7 +9,7 @@ class Car {
     this.y = this._ctx.canvas.height - this.h - 100
 
     this._img = new Image()
-    this._img.src = '../img/car.png'
+    this._img.src = './img/car.png'
 
     this._ticks = 0
     this.vx = -3
