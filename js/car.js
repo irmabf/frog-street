@@ -12,6 +12,7 @@ class Car {
     this._img.src = '../img/car.png'
 
     this._ticks = 0
+    this.vx = -3
   }
 
   draw() {
@@ -22,5 +23,9 @@ class Car {
       this.w,
       this.h
     )
+  }
+
+  move() {
+    this.x += this.vx
   }
 }

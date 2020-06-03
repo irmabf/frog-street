@@ -24,6 +24,7 @@ class Game {
 
     this._bg.draw()
     this._car.draw()
+    this._car.move()
   }
   _clear() {
     this._ctx.clearRect(0, 0, this._ctx.canvas.width, this._ctx.canvas.height)
