@@ -5,6 +5,7 @@ class Game {
     this._intervalId = null
 
     this._bg = new Background(this._ctx)
+    this._car = new Car(this._ctx)
 
     this._tick = 0
   }
@@ -22,6 +23,7 @@ class Game {
     }
 
     this._bg.draw()
+    this._car.draw()
   }
   _clear() {
     this._ctx.clearRect(0, 0, this._ctx.canvas.width, this._ctx.canvas.height)
