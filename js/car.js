@@ -27,5 +27,20 @@ class Car {
 
   move() {
     this.x += this.vx
+    this.goBack()
+  }
+
+  isVisible() {
+    return (
+      this.x < this.ctx.canvas.width * 2 &&
+      this.x > 0 - this.ctx.canvas.width
+    )
+  }
+
+  goBack() {
+    // IMPROVE, TOO BASIC
+    if (this.x === 50) {
+      this.x = this._ctx.canvas.width - this.w
+    }
   }
 }
