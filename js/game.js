@@ -40,7 +40,11 @@ class Game {
 
   checkCollisions() {
     if (this._frog.y - this._car.y <= 40 && this._car.y - this._frog.y <= 60) {
-      console.log('colission in y')
+      if (this._frog.x - this._car.x >= -30 && this._frog.x - this._car.x <= 131) {
+        alert('YOU ARE DEAD')
+      }
+
+      // reset, send frog back to starting y and x
     }
   }
 }
