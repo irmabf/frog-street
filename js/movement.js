@@ -12,6 +12,12 @@ class Movements {
         case DOWN_KEY:
           this._el.y += 10
           break;
+        case RIGHT_KEY:
+          this._el.x += 10
+          break;
+        case LEFT_KEY:
+          this._el.x -= 10
+          break;
       }
     })
   }
