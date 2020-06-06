@@ -6,7 +6,7 @@ class Frog {
     this.h = 100
 
     this.x = 400
-    this.y = this._ctx.canvas.height - this.h
+    this.y = this._ctx.canvas.height - 80
 
     this._img = new Image()
     this._img.src = './img/frog.png'

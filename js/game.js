@@ -15,6 +15,7 @@ class Game {
       this._clear()
       this._draw()
       this._move()
+      this.checkCollisions()
     }, 1000 / 60)
   }
 
@@ -35,5 +36,11 @@ class Game {
   // fix frog out of canvas movements
   _move() {
     this._frog.move()
+  }
+
+  checkCollisions() {
+    if (this._frog.y - this._car.y <= 40 && this._car.y - this._frog.y <= 60) {
+      console.log('colission in y')
+    }
   }
 }
