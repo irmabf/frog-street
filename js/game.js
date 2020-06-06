@@ -14,6 +14,7 @@ class Game {
     this._intervalId = setInterval(() => {
       this._clear()
       this._draw()
+      this._move()
     }, 1000 / 60)
   }
 
@@ -29,5 +30,10 @@ class Game {
   }
   _clear() {
     this._ctx.clearRect(0, 0, this._ctx.canvas.width, this._ctx.canvas.height)
+  }
+
+  // fix frog out of canvas movements
+  _move() {
+    this._frog.move()
   }
 }

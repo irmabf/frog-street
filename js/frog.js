@@ -22,4 +22,23 @@ class Frog {
       this.h
     )
   }
+
+  move() {
+    if (this.x === -30) {
+      console.log('DONT GO OUT OF THE ROAD!!!!')
+      this.x = -20
+    }
+    if (this.x === 770) {
+      console.log('DONT GO OUT OF THE ROAD')
+      this.x = 760
+    }
+    if (this.y === -30) {
+      console.log('WOON')
+      this.y = 400
+    }
+    if (this.y === 410) {
+      console.log('DONT GO OUT OF THE ROAD!!!!')
+      this.y = 400
+    }
+  }
 }
