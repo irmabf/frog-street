@@ -38,13 +38,17 @@ class Game {
     this._frog.move()
   }
 
+  _resetFrog() {
+    this._frog.reset()
+  }
+
   checkCollisions() {
     if (this._frog.y - this._car.y <= 40 && this._car.y - this._frog.y <= 60) {
       if (this._frog.x - this._car.x >= -30 && this._frog.x - this._car.x <= 131) {
         alert('YOU ARE DEAD')
+        this._resetFrog()
       }
 
-      // reset, send frog back to starting y and x
     }
   }
 }

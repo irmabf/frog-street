@@ -23,6 +23,11 @@ class Frog {
     )
   }
 
+  reset() {
+    this.x = 400
+    this.y = this._ctx.canvas.height - 80
+  }
+
   move() {
     if (this.x === -30) {
       console.log('DONT GO OUT OF THE ROAD!!!!')
