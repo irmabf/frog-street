@@ -1,18 +1,18 @@
 class Car {
-  constructor(ctx) {
+  constructor(ctx, img, imgSrc, width, height, positionX, positionY, vx) {
     this._ctx = ctx
 
-    this.w = 150
-    this.h = 75
-
-    this.x = this._ctx.canvas.width - this.w
-    this.y = this._ctx.canvas.height - 200
+    this.w = width
+    this.h = height
+    this.x0 = positionX
+    this.x = positionX
+    this.y = this._ctx.canvas.height - positionY
 
     this._img = new Image()
-    this._img.src = './img/car.png'
-
+    // this._img.src = './img/car.png'
+    this._img.src = imgSrc
     this._ticks = 0
-    this.vx = -3
+    this.vx = vx
   }
 
   draw() {
@@ -32,8 +32,10 @@ class Car {
 
   goBack() {
     // IMPROVE, TOO BASIC
-    if (this.x === 50) {
-      this.x = this._ctx.canvas.width - this.w
+    if (this.x !== this.xo) {
+      if (this.x === 50 || this.x === 600) {
+        this.x = this.x0
+      }
     }
   }
 }
