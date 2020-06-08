@@ -32,7 +32,7 @@ class Car {
   goBack() {
     // IMPROVE, TOO BASIC
     if (this.x !== this.xo) {
-      if (this.x === 50 || this.x === 600) {
+      if (this.x <= 50 || this.x >= 1000) {
         this.x = this.x0
       }
     }
