@@ -8,8 +8,7 @@ class Car {
     this.x = positionX
     this.y = this._ctx.canvas.height - positionY
 
-    this._img = new Image()
-    // this._img.src = './img/car.png'
+    this._img = img
     this._img.src = imgSrc
     this._ticks = 0
     this.vx = vx
