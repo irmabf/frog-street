@@ -5,7 +5,7 @@ class Frog {
     this.w = 60
     this.h = 100
 
-    this.x = 400
+    this.x = this._ctx.canvas.width / 2
     this.y = this._ctx.canvas.height - 80
 
     this._img = new Image()
@@ -26,6 +26,8 @@ class Frog {
   reset() {
     this.x = 400
     this.y = this._ctx.canvas.height - 80
+
+
   }
 
   move() {

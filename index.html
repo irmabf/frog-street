@@ -4,24 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,500,700,900"
+      rel="stylesheet"
+    />
     <title>Street Frog</title>
   </head>
   <body>
-    <header class="header">
-      <h1>Street Frog</h1>
-    </header>
-    <div class="container">
-      <canvas id="my-canvas" width="1000" height="500"></canvas>
-      <script src="./js/constants.js"></script>
-      <script src="./js/movement.js"></script>
-      <script src="./js/frog.js"></script>
-      <script src="./js/car.js"></script>
-      <script src="./js/game.js"></script>
-      <script src="js/background.js"></script>
-      <script src="./js/app.js"></script>
+    <div id="game">
+      <header class="header">
+        <div id="bloody-title" class="bloody hide">
+          <h1 class="title">
+            You are dead!!!
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+            <span class="drop"></span>
+          </h1>
+        </div>
+
+        <h1 id="title" class="blood show">Street Frog</h1>
+      </header>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        style="width: 0; height: 0;"
+      >
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+              result="goo"
+            />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="container">
+        <canvas id="my-canvas" width="1000" height="500"></canvas>
+        <script src="./js/constants.js"></script>
+        <script src="./js/movement.js"></script>
+        <script src="./js/frog.js"></script>
+        <script src="./js/car.js"></script>
+        <script src="./js/game.js"></script>
+        <script src="js/background.js"></script>
+        <script src="./js/app.js"></script>
+      </div>
+      <footer class="footer">
+        <p>Created by: Irma Blanco 2020</p>
+      </footer>
     </div>
-    <footer class="footer">
-      <p>Created by: Irma Blanco 2020</p>
-    </footer>
+    <div id="start" class="hide">
+      Pantalla inicial
+    </div>
+    <div id="end" class="hide">
+      Pantalla final
+    </div>
   </body>
 </html>
