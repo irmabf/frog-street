@@ -72,6 +72,30 @@
         </button>
       </div>
     </div>
+    <div id="won" class="hide">
+      <h1 class="title">
+        You won!!!!
+      </h1>
+      <section class="flex-container">
+        <div class="img-container">
+          <img class="img crowned" src="./img/crowned-frog.png" alt="" />
+        </div>
+        <div class="stats-container">
+          <p class="stats-title">Your stats</p>
+          <p class="stats-data">Player name: <span id="player-name"></span></p>
+          <p id="player-victories" class="stats-data">Victories:</p>
+        </div>
+      </section>
+
+      <div class="button-box">
+        <button id="play-again" class="btn" onclick="goBackToGame()">
+          Play Again
+        </button>
+        <button id="go-back" class="btn" onclick="resetGame()">
+          Reset game
+        </button>
+      </div>
+    </div>
     <div id="game" class="hide">
       <header class="header">
         <h1 id="title" class="blood">Street Frog</h1>
@@ -135,6 +159,8 @@
       function goBackToGame() {
         document.getElementById("dead").classList.remove("show");
         document.getElementById("dead").classList.add("hide");
+        document.getElementById("won").classList.remove("show");
+        document.getElementById("won").classList.add("hide");
         document.getElementById("start").classList.remove("show");
         document.getElementById("start").classList.add("hide");
         document.getElementById("game").classList.remove("hide");
@@ -144,6 +170,8 @@
       function resetGame() {
         document.getElementById("dead").classList.remove("show");
         document.getElementById("dead").classList.add("hide");
+        document.getElementById("won").classList.remove("show");
+        document.getElementById("won").classList.add("hide");
         document.getElementById("start").classList.remove("hide");
         document.getElementById("start").classList.add("show");
         document.getElementById("name-field").value = "";

@@ -6,6 +6,7 @@ class Frog {
     this.h = 100
 
     this.x = this._ctx.canvas.width / 2
+    this.y0 = this._ctx.canvas.height - 80
     this.y = this._ctx.canvas.height - 80
 
     this._img = new Image()
@@ -42,10 +43,20 @@ class Frog {
     if (this.y === -30) {
       console.log('WOON')
       this.y = 400
+      this.handleDomOnFrogWon()
     }
-    if (this.y === 410) {
+    if (this.y > this.y0) {
       console.log('DONT GO OUT OF THE ROAD!!!!')
-      this.y = 400
+      this.y = this.y0
     }
+  }
+
+  handleDomOnFrogWon() {
+    const playerName = localStorage.getItem('PLAYER_NAME')
+    document.getElementById("player-name").innerText = playerName
+    document.getElementById("game").classList.remove('show')
+    document.getElementById("game").classList.add('hide')
+    document.getElementById("won").classList.remove('hide')
+    document.getElementById("won").classList.remove('show')
   }
 }

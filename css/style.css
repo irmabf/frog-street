@@ -303,3 +303,7 @@ h1 {
   opacity: 1;
   cursor: pointer;
 }
+
+.crowned {
+  width: 30rem;
+}
