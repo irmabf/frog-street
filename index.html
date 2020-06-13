@@ -52,12 +52,23 @@
         <span class="drop"></span>
         <span class="drop"></span>
       </h1>
-      <div class="img-container">
-        <img class="img" src="./img/bloody_frog.jpg" alt="" />
-      </div>
+      <section class="flex-container">
+        <div class="img-container">
+          <img class="img" src="./img/bloody_frog.jpg" alt="" />
+        </div>
+        <div class="stats-container">
+          <p class="stats-title">Your stats</p>
+          <p class="stats-data">Player name: <span id="player-name"></span></p>
+          <p id="player-victories" class="stats-data">Victories:</p>
+        </div>
+      </section>
+
       <div class="button-box">
         <button id="play-again" class="btn" onclick="goBackToGame()">
           Play Again
+        </button>
+        <button id="go-back" class="btn" onclick="resetGame()">
+          Reset game
         </button>
       </div>
     </div>
@@ -106,12 +117,12 @@
           document.getElementById("btn-play").click();
         }
       });
-      document.addEventListener("keydown", function (event) {
-        if (event.keyCode === 13) {
-          event.preventDefault();
-          document.getElementById("play-again").click();
-        }
-      });
+      // document.addEventListener("keydown", function (event) {
+      //   if (event.keyCode === 13) {
+      //     event.preventDefault();
+      //     document.getElementById("play-again").click();
+      //   }
+      // });
       function playGame() {
         document.getElementById("dead").classList.remove("show");
         document.getElementById("dead").classList.add("hide");
@@ -130,12 +141,22 @@
         document.getElementById("game").classList.add("show");
       }
 
+      function resetGame() {
+        document.getElementById("dead").classList.remove("show");
+        document.getElementById("dead").classList.add("hide");
+        document.getElementById("start").classList.remove("hide");
+        document.getElementById("start").classList.add("show");
+        document.getElementById("name-field").value = "";
+      }
+
       function handleInput(event) {
         if (event.value.length >= 3) {
           document.getElementById("btn-play").disabled = false;
           document.getElementById("btn-play").classList.remove("disabled");
           document.getElementById("btn-play").classList.add("enabled");
         }
+
+        localStorage.setItem("PLAYER_NAME", event.value);
       }
     </script>
   </body>

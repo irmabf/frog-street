@@ -189,9 +189,32 @@ h1 {
   max-width: 100%;
 }
 
-.img-container {
+
+.flex-container {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.img-container,
+.stats-container {
   text-align: center;
   padding-top: 3rem;
+}
+
+.stats-container {
+  margin-top: 3rem;
+  padding-left: 3rem;
+}
+
+.stats-title {
+  font-size: 2rem;
+  padding-bottom: 3rem;
+}
+
+.stats-data {
+  font-size: 1rem;
+  padding-bottom: 1rem;
 }
 
 .button-box {

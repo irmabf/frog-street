@@ -70,5 +70,8 @@ class Game {
     document.getElementById("game").classList.add('hide')
     document.getElementById("dead").classList.remove('hide')
     document.getElementById("dead").classList.remove('show')
+
+    const playerName = localStorage.getItem('PLAYER_NAME')
+    document.getElementById("player-name").innerText = playerName
   }
 }
