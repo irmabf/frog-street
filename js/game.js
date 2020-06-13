@@ -58,27 +58,17 @@ class Game {
     this.cars.forEach(car => {
       if (this._frog.y - car.y <= 40 && car.y - this._frog.y <= 60) {
         if (this._frog.x - car.x >= -30 && this._frog.x - car.x <= 131) {
-
-          this.updateDom()
-          setTimeout(this.resetDom, 3000)
+          setTimeout(this.handleDomOnDeadFrog, 1000)
           this._resetFrog()
-          // document.getElementById("game").classList.add('hide')
         }
       }
     })
   }
 
-  updateDom() {
-    document.getElementById("bloody-title").classList.add('show')
-    document.getElementById("bloody-title").classList.remove('hide')
-    document.getElementById("title").classList.add('hide')
-    document.getElementById("title").classList.remove('show')
-  }
-
-  resetDom() {
-    document.getElementById("bloody-title").classList.add('hide')
-    document.getElementById("bloody-title").classList.remove('show')
-    document.getElementById("title").classList.add('show')
-    document.getElementById("title").classList.remove('hide')
+  handleDomOnDeadFrog() {
+    document.getElementById("game").classList.remove('show')
+    document.getElementById("game").classList.add('hide')
+    document.getElementById("dead").classList.remove('hide')
+    document.getElementById("dead").classList.remove('show')
   }
 }

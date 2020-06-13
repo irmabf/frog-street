@@ -111,6 +111,7 @@ h1 {
   letter-spacing: -.12em;
   color: IndianRed;
   text-transform: uppercase;
+  padding-top: 2rem;
 }
 
 .drop {
@@ -179,4 +180,39 @@ h1 {
 
 .show-flex {
   display: flex;
+}
+
+.img {
+  text-align: center;
+  border: groove 1em red;
+  border-radius: 2em;
+  max-width: 100%;
+}
+
+.img-container {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.button-box {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.btn {
+  color: #ccc;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  outline: none;
+  line-height: 40px;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: #1d1e22;
+  font-family: 'Raleway';
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  border: 2px solid #AA3939;
+  color: #AA3939;
 }

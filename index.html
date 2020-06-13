@@ -11,20 +11,25 @@
     <title>Street Frog</title>
   </head>
   <body>
-    <div id="game">
+    <div id="dead" class="bloody hide">
+      <h1 class="title">
+        You are dead!!!
+        <span class="drop"></span>
+        <span class="drop"></span>
+        <span class="drop"></span>
+        <span class="drop"></span>
+        <span class="drop"></span>
+      </h1>
+      <div class="img-container">
+        <img class="img" src="./img/bloody_frog.jpg" alt="" />
+      </div>
+      <div class="button-box">
+        <button class="btn" onclick="playAgain()">Play Again</button>
+      </div>
+    </div>
+    <div id="game" class="show">
       <header class="header">
-        <div id="bloody-title" class="bloody hide">
-          <h1 class="title">
-            You are dead!!!
-            <span class="drop"></span>
-            <span class="drop"></span>
-            <span class="drop"></span>
-            <span class="drop"></span>
-            <span class="drop"></span>
-          </h1>
-        </div>
-
-        <h1 id="title" class="blood show">Street Frog</h1>
+        <h1 id="title" class="blood">Street Frog</h1>
       </header>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -46,23 +51,26 @@
       </svg>
       <div class="container">
         <canvas id="my-canvas" width="1000" height="500"></canvas>
-        <script src="./js/constants.js"></script>
-        <script src="./js/movement.js"></script>
-        <script src="./js/frog.js"></script>
-        <script src="./js/car.js"></script>
-        <script src="./js/game.js"></script>
-        <script src="js/background.js"></script>
-        <script src="./js/app.js"></script>
       </div>
       <footer class="footer">
         <p>Created by: Irma Blanco 2020</p>
       </footer>
     </div>
-    <div id="start" class="hide">
-      Pantalla inicial
-    </div>
-    <div id="end" class="hide">
-      Pantalla final
-    </div>
+
+    <script src="./js/constants.js"></script>
+    <script src="./js/movement.js"></script>
+    <script src="./js/frog.js"></script>
+    <script src="./js/car.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="js/background.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+      function playAgain() {
+        document.getElementById("dead").classList.remove("show");
+        document.getElementById("dead").classList.add("hide");
+        document.getElementById("game").classList.remove("hide");
+        document.getElementById("game").classList.add("show");
+      }
+    </script>
   </body>
 </html>
