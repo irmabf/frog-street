@@ -29,7 +29,7 @@ HEX: #c94c4c
 }
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway';
   font-weight: 500;
   font-size: 16px;
 }
@@ -199,7 +199,8 @@ h1 {
   padding-top: 3rem;
 }
 
-.btn {
+.btn,
+.btn-play {
   color: #ccc;
   border: 2px solid #ccc;
   cursor: pointer;
@@ -215,4 +216,67 @@ h1 {
 .btn:hover {
   border: 2px solid #AA3939;
   color: #AA3939;
+}
+
+.btn-play.enabled:hover {
+  border: 2px solid #AA3939;
+  color: #AA3939;
+}
+
+.start-title>span.blood {
+  margin-left: 1rem;
+}
+
+.welcome {
+  width: 15rem;
+  /* -webkit-transform: rotate(15deg) scale(1.4); */
+  /* transform: rotate(15deg) scale(1.4); */
+  -webkit-transform: rotate(0) scale(1);
+  transform: rotate(0) scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.welcome:hover {
+  /* -webkit-transform: rotate(0) scale(1);
+  transform: rotate(0) scale(1); */
+  -webkit-transform: rotate(15deg) scale(1.4);
+  transform: rotate(15deg) scale(1.4);
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.name-box {
+
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.name-box>p {
+  font-size: 1.2rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.name-input {
+  background-color: var(--light-coral);
+  color: var(--dark-coral);
+  padding: 1rem;
+  text-align: center;
+}
+
+.name-input::placeholder {
+  color: var(--dark-coral);
+  font-family: 'Raleway';
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: none;
+}
+
+.enabled {
+  opacity: 1;
+  cursor: pointer;
 }

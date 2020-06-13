@@ -11,6 +11,38 @@
     <title>Street Frog</title>
   </head>
   <body>
+    <div id="start" class="show">
+      <header class="header">
+        <h1 id="title" class="start-title">
+          Welcome to<span class="blood">Street Frog</span>
+        </h1>
+      </header>
+      <div class="img-container">
+        <img class="img welcome" src="./img/happy_frog.jpg" alt="" />
+      </div>
+
+      <div class="name-box">
+        <p>What is your name?</p>
+        <input
+          id="name-field"
+          class="name-input"
+          type="text"
+          placeholder="Write your name"
+          onkeyup="handleInput(this)"
+        />
+      </div>
+
+      <div class="button-box">
+        <button
+          id="btn-play"
+          disabled
+          class="btn-play disabled"
+          onclick="playGame()"
+        >
+          Let´s play
+        </button>
+      </div>
+    </div>
     <div id="dead" class="bloody hide">
       <h1 class="title">
         You are dead!!!
@@ -24,10 +56,10 @@
         <img class="img" src="./img/bloody_frog.jpg" alt="" />
       </div>
       <div class="button-box">
-        <button class="btn" onclick="playAgain()">Play Again</button>
+        <button class="btn" onclick="goBackToGame()">Play Again</button>
       </div>
     </div>
-    <div id="game" class="show">
+    <div id="game" class="hide">
       <header class="header">
         <h1 id="title" class="blood">Street Frog</h1>
       </header>
@@ -65,11 +97,30 @@
     <script src="js/background.js"></script>
     <script src="./js/app.js"></script>
     <script>
-      function playAgain() {
+      function playGame() {
         document.getElementById("dead").classList.remove("show");
         document.getElementById("dead").classList.add("hide");
+        document.getElementById("start").classList.remove("show");
+        document.getElementById("start").classList.add("hide");
         document.getElementById("game").classList.remove("hide");
         document.getElementById("game").classList.add("show");
+      }
+
+      function goBackToGame() {
+        document.getElementById("dead").classList.remove("show");
+        document.getElementById("dead").classList.add("hide");
+        document.getElementById("start").classList.remove("show");
+        document.getElementById("start").classList.add("hide");
+        document.getElementById("game").classList.remove("hide");
+        document.getElementById("game").classList.add("show");
+      }
+
+      function handleInput(event) {
+        if (event.value.length >= 3) {
+          document.getElementById("btn-play").disabled = false;
+          document.getElementById("btn-play").classList.remove("disabled");
+          document.getElementById("btn-play").classList.add("enabled");
+        }
       }
     </script>
   </body>
