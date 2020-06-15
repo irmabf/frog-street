@@ -14,7 +14,7 @@ class Game {
 
   start() {
     this._addCar()
-
+    localStorage.setItem('VICTORIES', 0)
     this._intervalId = setInterval(() => {
       this._clear()
 
@@ -72,6 +72,7 @@ class Game {
     document.getElementById("dead").classList.remove('show')
 
     const playerName = localStorage.getItem('PLAYER_NAME')
-    document.getElementById("player-name").innerText = playerName
+    document.getElementById("dead-player-name").innerText = playerName
+    document.getElementById("dead-player-victories").innerText = localStorage.getItem('VICTORIES')
   }
 }

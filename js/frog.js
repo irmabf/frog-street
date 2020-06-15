@@ -11,6 +11,8 @@ class Frog {
 
     this._img = new Image()
     this._img.src = './img/frog.png'
+
+    this.victories = 0
     new Movements(this).init()
   }
 
@@ -42,6 +44,8 @@ class Frog {
     }
     if (this.y === -30) {
       console.log('WOON')
+      this.victories++
+      localStorage.setItem('VICTORIES', this.victories);
       this.y = 400
       this.handleDomOnFrogWon()
     }
@@ -52,11 +56,14 @@ class Frog {
   }
 
   handleDomOnFrogWon() {
-    const playerName = localStorage.getItem('PLAYER_NAME')
-    document.getElementById("player-name").innerText = playerName
     document.getElementById("game").classList.remove('show')
     document.getElementById("game").classList.add('hide')
     document.getElementById("won").classList.remove('hide')
     document.getElementById("won").classList.remove('show')
+
+    document.getElementById("player-victories").innerText = localStorage.getItem('VICTORIES');
+    document.getElementById("player-name").innerText = localStorage.getItem(
+      "PLAYER_NAME"
+    )
   }
 }
